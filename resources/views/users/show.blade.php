@@ -9,8 +9,8 @@
 
 <body>
 
-    <a href="{{route ('users.index')}}" class="btn btn-info btn-sm me-1">Listar </a>
-    <a href="{{route ('users.edit',['user'=> $user->id])}}" class="btn btn-info btn-sm me-1">Editar </a>
+    <a href="{{route ('users.index')}}" >Listar </a>
+    <a href="{{route ('users.edit',['user'=> $user->id])}}" >Editar </a>
     <h2>Vizualizar Usuário</h2>
     @if (session('success'))
     <p style="color: green;">

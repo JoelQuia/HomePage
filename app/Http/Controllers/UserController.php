@@ -6,6 +6,9 @@ use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+
+
+
 class UserController extends Controller
 {
     public function index()
@@ -56,5 +59,11 @@ class UserController extends Controller
         ]);
 
         return redirect()->route('users.show', ['user' => $user->id])->with('success', 'Usuário atualizado com sucesso!');
+    }
+
+    public function destroy(User $user){
+$user->delete();
+
+        return redirect()->route ('users.index')->with('sucess', 'Usuário deletado com sucesso');
     }
 }

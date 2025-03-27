@@ -9,7 +9,7 @@
 
 <body>
 
-    <a href="{{route ('users.index')}}" class="btn btn-info btn-sm me-1">Listar </a>
+    <a href="{{route ('users.index')}}" >Listar </a>
 
     <br>
     <br>

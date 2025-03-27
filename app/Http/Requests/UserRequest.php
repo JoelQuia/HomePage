@@ -21,7 +21,7 @@ class UserRequest extends FormRequest
      */
     public function rules(): array
     {
-        $userId = $this->route('user');
+        $userId = $this->route('users');
         return [
             'name' => 'required',
             'email' => 'required|email|unique:user,email,' . ($userId ? $userId->id : null),

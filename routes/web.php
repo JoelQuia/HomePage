@@ -11,4 +11,4 @@ Route::get('/create-user', [UserController::class, 'create'])->name('users.creat
 Route::post('/store-user', [UserController::class, 'store'])->name('users-store');
 Route::get('/edit-user/{user}', [UserController::class, 'edit'])->name('users.edit');
 Route::put('/update-user/{user}', [UserController::class, 'update'])->name('users-update');
-Route::delete('/delete-user/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+Route::put('/destroy-user/{user}', [UserController::class, 'destroy'])->name('users-destroy');

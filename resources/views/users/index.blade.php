@@ -28,10 +28,13 @@
     Email: {{ $user->email }} <br>
     <a href="{{ route('users.show', ['user'=> $user->id]) }}">Vizualizar</a>
     <a href="{{ route('users.edit', ['user'=> $user->id]) }}">Editar</a>
+    <a href="{{ route('users.destroy', ['user'=> $user->id]) }}">Deletar</a>
     <hr>
     @empty
-
     @endforelse
+
+    <form method="POST" action="{{route ('user.destroy, ['user'=> $user->id])}}" >
+</form>
 </body>
 
 </html>
