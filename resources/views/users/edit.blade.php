@@ -4,16 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criando</title>
+    <title>Document</title>
 </head>
 
 <body>
 
     <a href="{{route ('users.index')}}" class="btn btn-info btn-sm me-1">Listar </a>
 
-    <br>
-    <br>
-    <h1> Cadastrar Usuários</h1>
+
+    <a href="{{route ('users.show',['user'=> $user->id])}}" class="btn btn-info btn-sm me-1">Vizualizar </a>
+
+    <h2>Editar Usuário</h2>
+
 
 
     @if ($errors->any())
@@ -25,18 +27,18 @@
     @endif
 
     <br>
-    <form action="{{ route('users-store') }}" method="POST">
+    <form action="{{ route('users-update', ['user'=> $user->id]) }}" method="POST">
         @csrf
-        @method('POST')
+        @method('PUT')
 
 
 
         <label>Nome:</label>
-        <input type="text" name="name" placeholder="Nome Completo" value="{{ old('name') }}">
+        <input type="text" name="name" placeholder="Nome Completo" value="{{ old('name', $user->name) }}">
 
         <br><br>
         <label>Email:</label>
-        <input type="email" name="email" placeholder="Insira seu email" value="{{ old('email') }}">
+        <input type="email" name="email" placeholder="Insira seu email" value="{{ old('email', $user->email) }}">
         <br><br>
 
         <label>Senha:</label>
@@ -44,11 +46,9 @@
 
         <br><br>
 
-        <button type="submit">Cadastrar</button>
+        <button type="submit">Salvar</button>
 
     </form>
-
-
 
 
 </body>
